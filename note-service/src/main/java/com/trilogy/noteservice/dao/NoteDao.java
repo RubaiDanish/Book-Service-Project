@@ -1,4 +1,4 @@
-package com.trilogy.noteservice.model.dao;
+package com.trilogy.noteservice.dao;
 
 import com.trilogy.noteservice.model.Note;
 
