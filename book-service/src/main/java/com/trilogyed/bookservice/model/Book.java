@@ -1,5 +1,6 @@
 package com.trilogyed.bookservice.model;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Objects;
 
 public class Book {
