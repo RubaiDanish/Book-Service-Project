@@ -19,7 +19,7 @@ public class BookController {
         this.bookDao = bookDao;
     }
 
-    
+
     @RequestMapping (value = "/books", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public Book createBook(@RequestBody Book book) {
