@@ -1,13 +1,16 @@
 package com.trilogyed.bookservice.dao;
 
-
+import com.trilogyed.bookservice.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
+<<<<<<< HEAD
+=======
 
-import java.awt.print.Book;
+>>>>>>> 8eb45ec2f47b4520bc3135e43eeb8ac7438d1859
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -61,7 +64,7 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
 
     @Override
     @Transactional
-    public Book addMotorcycle(Book book) {
+    public Book addBook(Book book) {
 
         jdbcTemplate.update(INSERT_BOOK_SQL,
                 book.getTitle(),
@@ -75,7 +78,7 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
     }
 
     @Override
-    public void updateMotorcycle(Book book) {
+    public void updateBook(Book book) {
 
         jdbcTemplate.update(UPDATE_BOOK_SQL,
                 book.getTitle(),

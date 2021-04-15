@@ -1,6 +1,7 @@
 package com.trilogyed.bookservice.dao;
 
-import java.awt.print.Book;
+
+import com.trilogyed.bookservice.model.Book;
 import java.util.List;
 
 public interface BookDao {
