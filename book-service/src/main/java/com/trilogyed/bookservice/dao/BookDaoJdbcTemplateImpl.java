@@ -6,10 +6,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
-<<<<<<< HEAD
-=======
-
->>>>>>> 8eb45ec2f47b4520bc3135e43eeb8ac7438d1859
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
