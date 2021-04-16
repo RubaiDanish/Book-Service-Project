@@ -20,7 +20,7 @@ public class NoteController {
         return noteDao.addNote(note);
     }
 
-    @RequestMapping (value = "/notes/{note_id}", method = RequestMethod.GET)
+    @RequestMapping (value = "/notes/{id}", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public Note getNote(@PathVariable int id) {
         if (id < 1) {
@@ -34,25 +34,28 @@ public class NoteController {
         return returnVal;
     }
 
-    // TODO: getNotesByBook
+    @RequestMapping (value = "/notes/book/{book_id}", method = RequestMethod.GET)
+    @ResponseStatus (value = HttpStatus.OK)
+    public List<Note> getNotesByBook(@PathVariable int book_id) {
+        return noteDao.getNoteByBook(book_id);
+    }
 
     @RequestMapping (value = "notes", method = RequestMethod.GET)
-    @ResponseStatus(value = HttpStatus.OK)
+    @ResponseStatus (value = HttpStatus.OK)
     public List<Note> getAllNotes() {
         return noteDao.getAllNotes();
     }
 
-    @RequestMapping (value = "/notes/{note_id}", method = RequestMethod.PUT)
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateNote(@RequestBody Note note, @PathVariable int note_id) {
-        if (note_id != note.getNoteId()) {
+    @RequestMapping (value = "/notes/{id}", method = RequestMethod.PUT)
+    @ResponseStatus (HttpStatus.NO_CONTENT)
+    public void updateNote(@RequestBody Note note, @PathVariable int id) {
+        if (id != note.getNoteId()) {
             throw new IllegalArgumentException("Book ID on path must match the ID in the Book object.");
         }
     }
 
-    @RequestMapping (value = "/notes/{note_id}", method = RequestMethod.DELETE)
+    @RequestMapping (value = "/notes/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteNote(@PathVariable int note_id) {
-
+    public void deleteNote(@PathVariable int id) {
     }
 }
