@@ -9,9 +9,11 @@ public class ServiceLayer {
     private BookDao bookDao;
     private noteRetrieval noteRetrieval;
 
-    public void createBookWithNotes(String book, String note){
+    public void createBookWithNotes(String title, String note){
 
         Book book1 = new Book();
-        book.
+        book1.setTitle(title);
+
+
     }
 }

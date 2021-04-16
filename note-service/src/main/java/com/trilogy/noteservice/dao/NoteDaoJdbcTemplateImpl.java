@@ -33,7 +33,7 @@ public class NoteDaoJdbcTemplateImpl implements NoteDao{
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public NoteDaoJdbcTemplateImpl(org.springframework.jdbc.core.JdbcTemplate jdbcTemplate) {
+    public NoteDaoJdbcTemplateImpl(JdbcTemplate jdbcTemplate) {
 
         this.jdbcTemplate = jdbcTemplate;
     }

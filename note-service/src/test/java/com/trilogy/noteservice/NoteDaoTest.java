@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class NoteDaoTest {
+
     @Autowired
     protected NoteDao dao;
 
@@ -38,7 +39,6 @@ public class NoteDaoTest {
     public void addGetDeleteNote() {
 
         Note note = new Note();
-        note.setBookId(123);
         note.setNote("Something");
 
         note = dao.addNote(note);
