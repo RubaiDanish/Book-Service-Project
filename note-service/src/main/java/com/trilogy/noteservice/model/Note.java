@@ -1,11 +1,13 @@
 package com.trilogy.noteservice.model;
 
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Objects;
 
 public class Note {
     private int noteId;
     private int bookId;
+    @NotEmpty(message = "You must supply a value for note.")
     private String note;
 
     public int getNoteId() {

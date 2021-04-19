@@ -3,12 +3,14 @@ package com.trilogy.noteservice.controller;
 import com.trilogy.noteservice.dao.NoteDao;
 import com.trilogy.noteservice.model.Note;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RefreshScope
 public class NoteController {
 
     @Autowired

@@ -58,13 +58,11 @@ public class NoteDaoTest {
     public void getAllNotes() {
 
         Note note = new Note();
-        note.setBookId(124);
         note.setNote("Something else");
 
         dao.addNote(note);
 
         note = new Note();
-        note.setBookId(125);
         note.setNote("Something else etc");
 
         dao.addNote(note);
@@ -77,30 +75,27 @@ public class NoteDaoTest {
     @Test
     public void getNoteByBook() {
         Note note = new Note();
-        note.setBookId(123);
         note.setNote("Something");
 
         dao.addNote(note);
 
         note = new Note();
-        note.setBookId(124);
         note.setNote("Something else");
 
         dao.addNote(note);
 
         note = new Note();
-        note.setBookId(125);
         note.setNote("Something else etc");
 
         dao.addNote(note);
 
-        List<Note> nList = dao.getNoteByBook(123);
+        List<Note> nList = dao.getNoteByBook(note.getNoteId());
         assertEquals(2, nList.size());
 
-        nList = dao.getNoteByBook(124);
+        nList = dao.getNoteByBook(note.getNoteId());
         assertEquals(1, nList.size());
 
-        nList = dao.getNoteByBook(125);
+        nList = dao.getNoteByBook(note.getNoteId());
         assertEquals(0, nList.size());
 
     }
@@ -109,12 +104,10 @@ public class NoteDaoTest {
     public void updateNote() {
 
         Note note = new Note();
-        note.setBookId(123);
         note.setNote("Something");
 
         note = dao.addNote(note);
 
-        note.setBookId(126);
         note.setNote("UPDATED");
 
         dao.updateNote(note);
